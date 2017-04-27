@@ -1,0 +1,47 @@
+<html>
+<head>
+    <!--bootstrap angular-->
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    
+    
+</head>
+<body>
+    <div ng-app="angularTypeahead">
+	<div class="container-fluid" ng-controller="TypeaheadCtrl">
+		<h2><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/15309/angular-logo.svg" alt="Angular.js Logo"> Angular.js Typeahead</h2>
+		<div class="form-group">
+		  <label for="states">Search for US States</label>
+			<input name="states" id="states" type="text" placeholder="enter a state" ng-model="selected" typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
+		</div>
+    <button class="btn btn-success" ng-click="addState()" >Submit</button>
+    <br>
+    <br>
+
+    <div>
+        <textarea mid="header" rows="4" cols="50">
+            {{selectedState}}
+        </textarea>
+    </div>
+
+    <br>
+    <br>
+    
+<div>
+    <!--create a form-->
+
+    <form action="">
+        <input name="page" type="text" placeholder="add page name">
+
+    </form>
+
+</div>
+    <input type="text" ng-model="articlelist[0].headers[0].name">
+	</div>
+</div>
+</body>
+</html>
